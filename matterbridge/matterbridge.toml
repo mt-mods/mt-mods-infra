@@ -1,0 +1,36 @@
+[irc]
+[irc.libera]
+Server="irc.libera.chat:6667"
+Nick="MTModsBot"
+Password="<secret-var>"
+RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
+
+[discord]
+[discord.mtmods]
+Token="<secret-var>"
+Server="905447873402003486"
+RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
+
+[[gateway]]
+name="maingateway"
+enable=true
+
+[[gateway.inout]]
+account="irc.libera"
+channel="#mt-mods"
+
+[[gateway.inout]]
+account = "discord.mtmods"
+channel="🛰modding"
+
+[[gateway]]
+name="offtopicgateway"
+enable=true
+
+[[gateway.inout]]
+account="irc.libera"
+channel="#mt-mods-offtopic"
+
+[[gateway.inout]]
+account = "discord.mtmods"
+channel="🏛lounge"
