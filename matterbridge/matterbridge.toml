@@ -11,6 +11,15 @@ Token="<secret-var>"
 Server="905447873402003486"
 RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 
+[matrix]
+[matrix.mtmods]
+Server="https://matrix.org"
+Login="mybot"
+Password="<secret-var>"
+RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
+NoHomeServerSuffix=true
+#HTMLDisable=true
+
 [[gateway]]
 name="maingateway"
 enable=true
@@ -23,6 +32,10 @@ channel="#mt-mods"
 account = "discord.mtmods"
 channel="🛰modding"
 
+[[gateway.inout]]
+account = "matrix.mtmods"
+channel="!IuYhGtsAusgKYlpUCs:matrix.org"
+
 [[gateway]]
 name="offtopicgateway"
 enable=true
@@ -34,3 +47,7 @@ channel="#mt-mods-offtopic"
 [[gateway.inout]]
 account = "discord.mtmods"
 channel="🏛lounge"
+
+[[gateway.inout]]
+account = "matrix.mtmods"
+channel="!dQppybfdWYiNSoXjYP:matrix.org"
