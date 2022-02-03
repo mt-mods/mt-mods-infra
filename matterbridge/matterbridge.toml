@@ -14,7 +14,7 @@ RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 [matrix]
 [matrix.mtmods]
 Server="https://matrix.org"
-Login="mybot"
+Login="@mtmods:matrix.org"
 Password="<secret-var>"
 RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 NoHomeServerSuffix=true
