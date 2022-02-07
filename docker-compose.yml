@@ -2,6 +2,6 @@ version: '3.7'
 
 services:
   matterbridge:
-    image: 42wim/matterbridge:1.23.2
+    image: 42wim/matterbridge:1.24.0
     volumes:
      - ./matterbridge:/etc/matterbridge
