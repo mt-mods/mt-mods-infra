@@ -1,6 +1,9 @@
 
 MT-Mods infrastructure repo
 
+[![deploy](https://github.com/mt-mods/mt-mods-infra/actions/workflows/deployment.yml/badge.svg)](https://github.com/mt-mods/mt-mods-infra/actions/workflows/deployment.yml)
+[![validate](https://github.com/mt-mods/mt-mods-infra/actions/workflows/validate.yml/badge.svg)](https://github.com/mt-mods/mt-mods-infra/actions/workflows/validate.yml)
+
 Currently contains:
 * Chat bridge setup and config
 
