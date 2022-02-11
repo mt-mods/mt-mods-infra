@@ -4,7 +4,31 @@ MT-Mods infrastructure repo
 Currently contains:
 * Chat bridge setup and config
 
+# Provisioning/Editing
+
+## Editing the secret config
+
+* Prerequisites: `ansible`
+
+Edit on the command-line (keep the vault-password ready):
+```bash
+ansible-vault edit host_vars/akheron.rudin.io.yml
+```
+
+## Provision
+
+To provision the compose-file in this repo you need:
+* Locally installed `ansible`
+* Authorized SSH-Access in the target(s) from the `hosts` file
+* The vault-password (in the discord #staff-links channel or ping up @BuckarooBanzay)
+
+To provision everything:
+```bash
+ansible-playbook -i hosts --ask-vaultpass deploy.yml
+```
+
 # Links
 
 * Matterbridge settings: https://github.com/42wim/matterbridge/wiki/Settings
 * Matterbridge configs/example: https://github.com/42wim/matterbridge#configuration
+* Infrastructure-provisioning tool: https://github.com/ansible/ansible
