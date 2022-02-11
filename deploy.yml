@@ -4,15 +4,16 @@
   vars:
     compose_directory: /data/mt-mods-infra
   tasks:
-    - name: Checkout git master
-      ansible.builtin.git:
-        repo: https://github.com/mt-mods/mt-mods-infra
-        dest: "{{ compose_directory }}"
-        single_branch: yes
-        version: master
+    - name: Copy and template files
+      template:
+        src: "{{item}}"
+        dest: "{{compose_directory}}/{{item}}"
+      with_items:
+        - "docker-compose.yml"
+        - "matterbridge/matterbridge.toml"
 
     - name: Configure services
-      community.general.docker_compose:
+      docker_compose:
         project_src: "{{ compose_directory }}"
         pull: yes
         build: yes

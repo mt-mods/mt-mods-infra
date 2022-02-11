@@ -2,12 +2,12 @@
 [irc.libera]
 Server="irc.libera.chat:6667"
 Nick="MTModsBot"
-Password="<secret-var>"
+Password="{{ IRC_LIBERA_PASSWORD }}"
 RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 
 [discord]
 [discord.mtmods]
-Token="<secret-var>"
+Token="{{ DISCORD_MTMODS_TOKEN }}"
 Server="905447873402003486"
 RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 
@@ -15,7 +15,7 @@ RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 [matrix.mtmods]
 Server="https://matrix.org"
 Login="@mtmods:matrix.org"
-Password="<secret-var>"
+Password="{{ MATRIX_MTMODS_PASSWORD }}"
 RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 NoHomeServerSuffix=true
 #HTMLDisable=true
