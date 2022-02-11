@@ -21,33 +21,47 @@ NoHomeServerSuffix=true
 #HTMLDisable=true
 
 [[gateway]]
-name="maingateway"
+name="main-channel"
 enable=true
-
 [[gateway.inout]]
 account="irc.libera"
 channel="#mt-mods"
-
 [[gateway.inout]]
 account = "discord.mtmods"
 channel="🛰modding"
-
 [[gateway.inout]]
 account = "matrix.mtmods"
 channel="!IuYhGtsAusgKYlpUCs:matrix.org"
 
 [[gateway]]
-name="offtopicgateway"
+name="offtopic-channel"
 enable=true
-
 [[gateway.inout]]
 account="irc.libera"
 channel="#mt-mods-offtopic"
-
 [[gateway.inout]]
 account = "discord.mtmods"
 channel="🏛lounge"
-
 [[gateway.inout]]
 account = "matrix.mtmods"
 channel="!dQppybfdWYiNSoXjYP:matrix.org"
+
+[[gateway]]
+name="review-me-channel"
+enable=true
+[[gateway.inout]]
+account = "discord.mtmods"
+channel="pls-review-me"
+[[gateway.inout]]
+account = "matrix.mtmods"
+channel="!OdCHbjfdlIjUXXHqMC:matrix.org"
+
+[[gateway]]
+name="tooling-channel"
+enable=true
+[[gateway.inout]]
+account = "discord.mtmods"
+channel="🛠tooling"
+[[gateway.inout]]
+account = "matrix.mtmods"
+channel="!NvhdxpOeVIwUQkaxos:matrix.org"
