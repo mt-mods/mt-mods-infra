@@ -27,7 +27,7 @@ To provision the compose-file in this repo you need:
 
 To provision everything:
 ```bash
-ansible-playbook -i hosts --ask-vaultpass deploy.yml
+ansible-playbook -i hosts --ask-vault-pass deploy.yml
 ```
 
 # Links
