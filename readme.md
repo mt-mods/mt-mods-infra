@@ -15,7 +15,7 @@ Currently contains:
 
 Edit on the command-line (keep the vault-password ready):
 ```bash
-ansible-vault edit host_vars/akheron.rudin.io.yml
+ansible-vault edit host_vars/all.yml
 ```
 
 ## Provision
