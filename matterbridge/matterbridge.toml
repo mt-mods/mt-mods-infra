@@ -4,12 +4,15 @@ Server="irc.libera.chat:6667"
 Nick="MTModsBot"
 Password="{{ IRC_LIBERA_PASSWORD }}"
 RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
+MessageSplit=true
+EditSuffix=" (edited)"
 
 [discord]
 [discord.mtmods]
 Token="{{ DISCORD_MTMODS_TOKEN }}"
 Server="905447873402003486"
 RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
+AllowMention=["users"]
 
 [matrix]
 [matrix.mtmods]
