@@ -7,7 +7,6 @@ RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 MessageSplit=true
 EditSuffix=" (edited)"
 ColorNicks=true
-ShowJoinPart=true
 
 [discord]
 [discord.mtmods]
@@ -15,7 +14,6 @@ Token="{{ DISCORD_MTMODS_TOKEN }}"
 Server="905447873402003486"
 RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 AllowMention=["users"]
-ShowJoinPart=true
 
 [matrix]
 [matrix.mtmods]
@@ -24,7 +22,6 @@ Login="@mtmods:matrix.org"
 Password="{{ MATRIX_MTMODS_PASSWORD }}"
 RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 NoHomeServerSuffix=true
-#HTMLDisable=true
 
 [[gateway]]
 name="main-channel"
