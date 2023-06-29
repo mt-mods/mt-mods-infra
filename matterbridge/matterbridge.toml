@@ -12,6 +12,7 @@ ColorNicks=true
 [discord.mtmods]
 Token="{{ DISCORD_MTMODS_TOKEN }}"
 Server="905447873402003486"
+UseUserName=false
 RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 AllowMention=["users"]
 
