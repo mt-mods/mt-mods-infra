@@ -10,7 +10,14 @@
         dest: "{{compose_directory}}/{{item}}"
       with_items:
         - "docker-compose.yml"
-        - "matterbridge/matterbridge.toml"
+        - "config/matterbridge.toml"
+
+    - name: Create nodered directory
+      file:
+        path: "{{compose_directory}}/data/nodered"
+        state: directory
+        owner: 1000
+        group: 1000
 
     - name: Configure services
       docker_compose:
