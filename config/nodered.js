@@ -35,6 +35,12 @@ module.exports = {
     httpAdminRoot: '/nodered',
     httpNodeRoot: '/nodered',
 
+    functionGlobalContext: {
+        secrets: {
+            discord_cdb_review_channel: "{{ DISCORD_CDB_REVIEW_WEBHOOK }}"
+        }
+    },
+
     exportGlobalContextKeys: false,
     contextStorage: {
         default: {
