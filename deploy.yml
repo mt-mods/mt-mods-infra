@@ -4,13 +4,27 @@
   vars:
     compose_directory: /data/mt-mods-infra
   tasks:
+    - name: Create config directory
+      file:
+        path: "{{compose_directory}}/config"
+        state: directory
+
     - name: Copy and template files
       template:
         src: "{{item}}"
         dest: "{{compose_directory}}/{{item}}"
       with_items:
         - "docker-compose.yml"
-        - "matterbridge/matterbridge.toml"
+        - "Dockerfile.nodered"
+        - "config/matterbridge.toml"
+        - "config/nodered.js"
+
+    - name: Create nodered directory
+      file:
+        path: "{{compose_directory}}/data/nodered"
+        state: directory
+        owner: "1000"
+        group: "1000"
 
     - name: Configure services
       docker_compose:

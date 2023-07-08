@@ -1,7 +1,35 @@
 version: '3.7'
 
 services:
-  matterbridge:
-    image: 42wim/matterbridge:1.26.0
-    volumes:
-     - ./matterbridge:/etc/matterbridge
+ matterbridge:
+  image: 42wim/matterbridge:1.26.0
+  volumes:
+   - ./config/matterbridge.toml:/etc/matterbridge/matterbridge.toml
+  labels:
+   - "promtail=true"
+
+ nodered:
+  build: 
+   dockerfile: ./Dockerfile.nodered
+   context: ./
+  restart: always
+  networks:
+   - terminator
+   - default
+  volumes:
+   - "./data/nodered:/data"
+   - "./config/nodered.js:/data/settings.js"
+  labels:
+   - "promtail=true"
+   - "traefik.enable=true"
+   - "traefik.docker.network=terminator"
+   - "traefik.http.routers.mtmods.rule=Host(`mt-mods.minetest.ch`) && PathPrefix(`/nodered`)"
+   - "traefik.http.services.mtmods.loadbalancer.server.port=1880"
+   - "traefik.http.routers.mtmods.entrypoints=websecure"
+   - "traefik.http.routers.mtmods.tls.certresolver=default"
+  healthcheck:
+   test: ['CMD','true']
+
+networks:
+ terminator:
+  external: true
