@@ -6,6 +6,7 @@ MT-Mods infrastructure repo
 
 Currently contains:
 * Chat bridge setup and config
+* [NodeRED](https://nodered.org/) instance: https://mt-mods.minetest.ch/nodered
 
 # Provisioning/Editing
 
@@ -34,4 +35,5 @@ ansible-playbook -i hosts --ask-vault-pass deploy.yml
 
 * Matterbridge settings: https://github.com/42wim/matterbridge/wiki/Settings
 * Matterbridge configs/example: https://github.com/42wim/matterbridge#configuration
+* NodeRED configuration: https://nodered.org/docs/user-guide/runtime/configuration
 * Infrastructure-provisioning tool: https://github.com/ansible/ansible
