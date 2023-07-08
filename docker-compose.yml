@@ -23,7 +23,7 @@ services:
    - "promtail=true"
    - "traefik.enable=true"
    - "traefik.docker.network=terminator"
-   - "traefik.http.routers.mtmodsnodered.rule=Host(`mt-mods.minetest.ch`) && Path(`/nodered`)"
+   - "traefik.http.routers.mtmodsnodered.rule=Host(`mt-mods.minetest.ch`) && PathPrefix(`/nodered`)"
    - "traefik.http.services.mtmodsnodered.loadbalancer.server.port=1880"
    - "traefik.http.routers.mtmodsnodered.entrypoints=websecure"
    - "traefik.http.routers.mtmodsnodered.tls.certresolver=default"
