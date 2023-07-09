@@ -1,27 +1,42 @@
 ---
 - hosts: all
   remote_user: root
+
   vars:
     compose_directory: /data/mt-mods-infra
+    template_files:
+      - "docker-compose.yml"
+      - "Dockerfile.nodered"
+      - "config/matterbridge.toml"
+      - "config/nodered.js"
+
   tasks:
     - name: Create config directory
       file:
-        path: "{{compose_directory}}/config"
+        path: "{{ compose_directory }}/config"
         state: directory
+
+    - name: Calculate previous checksums
+      stat:
+        path: "{{ compose_directory }}/{{ item }}"
+      register: "previous_hash"
+      with_items: "{{ template_files }}"
 
     - name: Copy and template files
       template:
-        src: "{{item}}"
-        dest: "{{compose_directory}}/{{item}}"
-      with_items:
-        - "docker-compose.yml"
-        - "Dockerfile.nodered"
-        - "config/matterbridge.toml"
-        - "config/nodered.js"
+        src: "{{ item }}"
+        dest: "{{ compose_directory }}/{{ item }}"
+      with_items: "{{ template_files }}"
+
+    - name: Calculate current checksums
+      stat:
+        path: "{{ compose_directory }}/{{ item }}"
+      register: "current_hash"
+      with_items: "{{ template_files }}"
 
     - name: Create nodered directory
       file:
-        path: "{{compose_directory}}/data/nodered"
+        path: "{{ compose_directory }}/data/nodered"
         state: directory
         owner: "1000"
         group: "1000"
@@ -32,3 +47,15 @@
         pull: yes
         build: yes
         remove_orphans: yes
+
+    - name: Matterbridge restart
+      docker_compose:
+        project_src: "{{ compose_directory }}"
+        state: restarted
+      when: previous_hash.results[2].stat.exists and previous_hash.results[2].stat.checksum != current_hash.results[2].stat.checksum
+
+    - name: NodeRED restart
+      docker_compose:
+        project_src: "{{ compose_directory }}"
+        state: restarted
+      when: previous_hash.results[3].stat.exists and previous_hash.results[3].stat.checksum != current_hash.results[3].stat.checksum
