@@ -8,6 +8,7 @@
       - "docker-compose.yml"
       - "Dockerfile.nodered"
       - "config/matterbridge.toml"
+      - "config/remotenickformat.tengo"
       - "config/nodered.js"
 
   tasks:
@@ -58,4 +59,4 @@
       docker_compose:
         project_src: "{{ compose_directory }}"
         restarted: yes
-      when: previous_hash.results[3].stat.exists and previous_hash.results[3].stat.checksum != current_hash.results[3].stat.checksum
+      when: previous_hash.results[4].stat.exists and previous_hash.results[3].stat.checksum != current_hash.results[4].stat.checksum

@@ -29,6 +29,9 @@ BindAddress="0.0.0.0:4243"
 Buffer=1000
 RemoteNickFormat="[{BRIDGE}] {NICK}"
 
+[tengo]
+RemoteNickFormat="/remotenickformat.tengo"
+
 [[gateway]]
 name="main"
 enable=true
