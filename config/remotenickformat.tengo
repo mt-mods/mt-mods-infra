@@ -1,7 +1,7 @@
 text := import("text")
 
-if nick == "bot" && bridge == "api" {
- result = ""
+if bridge == "api" {
+ result = "<"+nick+"> "
 } else {
  result = "["+bridge+"] <"+nick+"> "
 }
