@@ -30,7 +30,7 @@ Buffer=1000
 RemoteNickFormat="[{BRIDGE}] {NICK}"
 
 [[gateway]]
-name="main-channel"
+name="main"
 enable=true
 [[gateway.inout]]
 account="irc.libera"
@@ -46,7 +46,7 @@ account="api.bot"
 channel="main"
 
 [[gateway]]
-name="offtopic-channel"
+name="offtopic"
 enable=true
 [[gateway.inout]]
 account="irc.libera"
@@ -62,7 +62,7 @@ account="api.bot"
 channel="offtopic"
 
 [[gateway]]
-name="review-me-channel"
+name="review-me"
 enable=true
 [[gateway.inout]]
 account = "discord.mtmods"
@@ -75,7 +75,7 @@ account="api.bot"
 channel="review-me"
 
 [[gateway]]
-name="tooling-channel"
+name="tooling"
 enable=true
 [[gateway.inout]]
 account = "discord.mtmods"
@@ -88,7 +88,7 @@ account="api.bot"
 channel="tooling"
 
 [[gateway]]
-name="bot-channel"
+name="bot"
 enable=true
 [[gateway.inout]]
 account = "discord.mtmods"
