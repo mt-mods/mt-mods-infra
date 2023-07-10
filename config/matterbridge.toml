@@ -13,7 +13,7 @@ ColorNicks=true
 Token="{{ DISCORD_MTMODS_TOKEN }}"
 Server="905447873402003486"
 UseUserName=false
-RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
+RemoteNickFormat="{TENGO}"
 AllowMention=["users"]
 
 [matrix]
