@@ -38,7 +38,8 @@ module.exports = {
     functionGlobalContext: {
         secrets: {
             discord_cdb_review_channel: "{{ DISCORD_CDB_REVIEW_WEBHOOK }}"
-        }
+        },
+        dgram: require('dgram')
     },
 
     exportGlobalContextKeys: false,
