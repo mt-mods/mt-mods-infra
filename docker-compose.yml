@@ -9,7 +9,7 @@ services:
   labels:
    - "promtail=true"
 
- nodered:
+ mt-mods-nodered:
   build: 
    dockerfile: ./Dockerfile.nodered
    context: ./
