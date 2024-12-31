@@ -43,20 +43,18 @@
         group: "1000"
 
     - name: Configure services
-      docker_compose:
-        project_src: "{{ compose_directory }}"
-        pull: yes
-        build: yes
-        remove_orphans: yes
+      shell:
+        cmd: "docker-compose up -d --remove-orphans"
+        chdir: "{{ compose_directory }}"
 
     - name: Matterbridge restart
-      docker_compose:
-        project_src: "{{ compose_directory }}"
-        restarted: yes
+      shell:
+        cmd: "docker-compose restart matterbridge"
+        chdir: "{{ compose_directory }}"
       when: previous_hash.results[2].stat.exists and previous_hash.results[2].stat.checksum != current_hash.results[2].stat.checksum
 
     - name: NodeRED restart
-      docker_compose:
-        project_src: "{{ compose_directory }}"
-        restarted: yes
+      shell:
+        cmd: "docker-compose restart mt-mods-nodered"
+        chdir: "{{ compose_directory }}"
       when: previous_hash.results[4].stat.exists and previous_hash.results[4].stat.checksum != current_hash.results[4].stat.checksum
