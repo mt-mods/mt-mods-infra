@@ -44,17 +44,17 @@
 
     - name: Configure services
       shell:
-        cmd: "docker-compose up -d --remove-orphans"
+        cmd: "docker compose up -d --remove-orphans"
         chdir: "{{ compose_directory }}"
 
     - name: Matterbridge restart
       shell:
-        cmd: "docker-compose restart matterbridge"
+        cmd: "docker compose restart matterbridge"
         chdir: "{{ compose_directory }}"
       when: previous_hash.results[2].stat.exists and previous_hash.results[2].stat.checksum != current_hash.results[2].stat.checksum
 
     - name: NodeRED restart
       shell:
-        cmd: "docker-compose restart mt-mods-nodered"
+        cmd: "docker compose restart mt-mods-nodered"
         chdir: "{{ compose_directory }}"
       when: previous_hash.results[4].stat.exists and previous_hash.results[4].stat.checksum != current_hash.results[4].stat.checksum

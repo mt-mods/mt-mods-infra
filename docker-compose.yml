@@ -6,8 +6,6 @@ services:
   volumes:
    - ./config/matterbridge.toml:/etc/matterbridge/matterbridge.toml
    - ./config/remotenickformat.tengo:/remotenickformat.tengo
-  labels:
-   - "promtail=true"
 
  mt-mods-nodered:
   build: 
@@ -21,7 +19,6 @@ services:
    - "./data/nodered:/data"
    - "./config/nodered.js:/data/settings.js"
   labels:
-   - "promtail=true"
    - "traefik.enable=true"
    - "traefik.docker.network=terminator"
    - "traefik.http.routers.mtmods.rule=Host(`mt-mods.minetest.ch`) && PathPrefix(`/nodered`)"
