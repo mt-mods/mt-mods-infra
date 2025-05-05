@@ -16,7 +16,7 @@ Currently contains:
 
 Edit on the command-line (keep the vault-password ready):
 ```bash
-ansible-vault edit host_vars/all.yml
+ansible-vault edit group_vars/all.yml
 ```
 
 ## Provision

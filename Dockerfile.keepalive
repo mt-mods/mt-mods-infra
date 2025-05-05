@@ -1,0 +1,6 @@
+FROM alpine:3.21.3
+RUN apk add git curl fortune bash
+
+COPY ./config/keepalive.sh /keepalive.sh
+RUN chmod 755 /keepalive.sh
+CMD ["/keepalive.sh"]

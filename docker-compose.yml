@@ -28,6 +28,15 @@ services:
   healthcheck:
    test: ['CMD','true']
 
+ github-keepalive:
+  build: 
+   dockerfile: ./Dockerfile.keepalive
+   context: ./
+  restart: always
+  environment:
+   GITHUB_TOKEN: "{{ KEEPALIVE_GITHUB_TOKEN }}"
+   GITHUB_REPOS: "minetest-game/repo_slicer minetest-mirrors/minetest-mirrors"
+
 networks:
  terminator:
   external: true

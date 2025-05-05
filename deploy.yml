@@ -7,6 +7,8 @@
     template_files:
       - "docker-compose.yml"
       - "Dockerfile.nodered"
+      - "Dockerfile.keepalive"
+      - "config/keepalive.sh"
       - "config/matterbridge.toml"
       - "config/remotenickformat.tengo"
       - "config/nodered.js"
@@ -44,7 +46,7 @@
 
     - name: Configure services
       shell:
-        cmd: "docker compose up -d --remove-orphans"
+        cmd: "docker compose up -d --remove-orphans --build"
         chdir: "{{ compose_directory }}"
 
     - name: Matterbridge restart
