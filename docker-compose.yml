@@ -35,7 +35,7 @@ services:
   restart: always
   environment:
    GITHUB_TOKEN: "{{ KEEPALIVE_GITHUB_TOKEN }}"
-   GITHUB_REPOS: "minetest-game/repo_slicer minetest-mirrors/minetest-mirrors"
+   GITHUB_REPOS: "minetest-game/repo_slicer minetest-mirrors/minetest-mirrors Archtec-io/archtec-infra"
 
 networks:
  terminator:
