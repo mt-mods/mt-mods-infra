@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
  matterbridge:
+  restart: always
   image: 42wim/matterbridge:1.26.0
   volumes:
    - ./config/matterbridge.toml:/etc/matterbridge/matterbridge.toml
