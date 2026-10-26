@@ -3,7 +3,7 @@ version: '3.7'
 services:
  matterbridge:
   restart: always
-  image: 42wim/matterbridge:1.26.0
+  image: ghcr.io/matterbridge-org/matterbridge:latest
   volumes:
    - ./config/matterbridge.toml:/etc/matterbridge/matterbridge.toml
    - ./config/remotenickformat.tengo:/remotenickformat.tengo
