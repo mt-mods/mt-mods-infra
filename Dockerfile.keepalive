@@ -1,4 +1,4 @@
-FROM alpine:3.24.3
+FROM alpine:3.24.4
 RUN apk add git curl fortune bash
 
 COPY ./config/keepalive.sh /keepalive.sh
